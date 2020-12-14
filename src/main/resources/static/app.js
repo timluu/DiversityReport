@@ -1,116 +1,66 @@
 const base = 'http://localhost:8080';
 const method = "GET";
 
-
-const loadMayors = () => {
-    reset();
-    const url = base + "/api/mayors";
-    const success = (response) => {
-        displayMayorTable(response);
-    };
-
-    $.ajax({ url, method, success });
+const load = (position) => {
     
-};
-
-const loadGovernors = () => {
-    reset();
-    const url = base + "/api/governors";
+    const url = base + `/api/${position}`;
     const success = (response) => {
-        displayGovernorTable(response);
+        displayTable(position, response);
     };
 
     $.ajax({ url, method, success });
+
 };
 
-const loadCongress = () => {
-    reset();
-    const url = base + "/api/congress";
-    const success = (response) => {
-        $("#dataDisplay").append("<tr><td>ITS THE CONGRESS PEOPLE</td></tr>");
-    };
-
-    $.ajax({ url, method, success });
-};
-
-const displayMayorTable = (mayors) => {
-    let header = $("<tr></tr>");
+const displayTable = (position, members) => {
+    
+    const table = $(`#${position}Table`);
+    table.append(`<caption>${position.toUpperCase()}</caption>`);
+    const header = $("<tr></tr>");
+    
     header.append("<th>ID</th>");
     header.append("<th>Full Name</th>");
-    header.append("<th>City</th>");
+    if (position === "mayors") header.append("<th>City</th>");
     header.append("<th>State</th>");
+    if (position === "congress") header.append("<th>Government Seat</th>");
     header.append("<th>Year Began</th>");
     header.append("<th>Year Ended</th>");
     header.append("<th>Ethnicity</th>");
     header.append("<th>Gender</th>");
     header.append("<th>Birth Year</th>");
     header.append("<th>Appointment Age</th>");
-    header.append("<th>Alive</th>");
-    header.append("<th>Income</th>");
-    header.append("<th>Religion</th>");
-    header.append("<th>Previous Occupation</th>");
-    header.append("<th>Photo Url</th>");
-    $("#dataDisplay").append(header);
-
-    for (let mayor of mayors) {
-        let row = $("<tr></tr>");
-        row.append(`<td>${mayor.id}</td>`);
-        row.append(`<td>${mayor.fullName}</td>`);
-        row.append(`<td>${mayor.city}</td>`);
-        row.append(`<td>${mayor.state}</td>`);
-        row.append(`<td>${mayor.yearBegan}</td>`);
-        row.append(`<td>${mayor.yearEnded}</td>`);
-        row.append(`<td>${mayor.ethnicity}</td>`);
-        row.append(`<td>${mayor.gender}</td>`);
-        row.append(`<td>${mayor.birthYear}</td>`);
-        row.append(`<td>${mayor.appointmentAge}</td>`);
-        row.append(`<td>${mayor.isAlive}</td>`);
-        row.append(`<td>${mayor.income}</td>`);
-        row.append(`<td>${mayor.religion}</td>`);
-        row.append(`<td>${mayor.previousOccupation}</td>`);
-        row.append(`<td>${mayor.photoUrl}</td>`);
-        $("#dataDisplay").append(row);
+    if (position === "mayors" || position === "governors") {
+        header.append("<th>Alive</th>");
+        header.append("<th>Income</th>");
+        header.append("<th>Religion</th>");
+        header.append("<th>Previous Occupation</th>");
     }
-};
-
-const displayGovernorTable = (governors) => {
-    let header = $("<tr></tr>");
-    header.append("<th>ID</th>");
-    header.append("<th>Full Name</th>");
-    header.append("<th>State</th>");
-    header.append("<th>Year Began</th>");
-    header.append("<th>Year Ended</th>");
-    header.append("<th>Ethnicity</th>");
-    header.append("<th>Gender</th>");
-    header.append("<th>Birth Year</th>");
-    header.append("<th>Appointment Age</th>");
-    header.append("<th>Alive</th>");
-    header.append("<th>Income</th>");
-    header.append("<th>Religion</th>");
-    header.append("<th>Previous Occupation</th>");
+    if (position === "congress") header.append("<th>Total Terms</th>");
     header.append("<th>Photo Url</th>");
-    $("#dataDisplay").append(header);
+    table.append(header);
 
-    for (let governor of governors) {
+    for (let member of members) {
         let row = $("<tr></tr>");
-        row.append(`<td>${governor.id}</td>`);
-        row.append(`<td>${governor.fullName}</td>`);
-        row.append(`<td>${governor.state}</td>`);
-        row.append(`<td>${governor.yearBegan}</td>`);
-        row.append(`<td>${governor.yearEnded}</td>`);
-        row.append(`<td>${governor.ethnicity}</td>`);
-        row.append(`<td>${governor.gender}</td>`);
-        row.append(`<td>${governor.birthYear}</td>`);
-        row.append(`<td>${governor.appointmentAge}</td>`);
-        row.append(`<td>${governor.isAlive}</td>`);
-        row.append(`<td>${governor.income}</td>`);
-        row.append(`<td>${governor.religion}</td>`);
-        row.append(`<td>${governor.previousOccupation}</td>`);
-        row.append(`<td>${governor.photoUrl}</td>`);
-        $("#dataDisplay").append(row);
+        row.append(`<td>${member.id}</td>`);
+        row.append(`<td>${member.fullName}</td>`);
+        if (position === "mayors") row.append(`<td>${member.city}</td>`);
+        row.append(`<td>${member.state}</td>`);
+        if (position === "congress") row.append(`<td>${member.governmentSeat}</td>`);
+        row.append(`<td>${member.yearBegan}</td>`);
+        row.append(`<td>${member.yearEnded}</td>`);
+        row.append(`<td>${member.ethnicity}</td>`);
+        row.append(`<td>${member.gender}</td>`);
+        row.append(`<td>${member.birthYear}</td>`);
+        row.append(`<td>${member.appointmentAge}</td>`);
+        if (position === "mayors" || position === "governors") {
+            row.append(`<td>${member.isAlive}</td>`);
+            row.append(`<td>${member.income}</td>`);
+            row.append(`<td>${member.religion}</td>`);
+            row.append(`<td>${member.previousOccupation}</td>`);
+        }
+        if (position === "congress") row.append(`<td>${member.totalTerms}</td>`);
+        row.append(`<td>${member.photoUrl}</td>`);
+        table.append(row);
     }
-};
 
-const reset = () => {
-    $("#dataDisplay").empty();
 };
