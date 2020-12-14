@@ -1,6 +1,7 @@
 package com.talentpath.DiversityReport.services;
 
 import com.talentpath.DiversityReport.daos.AppDao;
+import com.talentpath.DiversityReport.models.Governor;
 import com.talentpath.DiversityReport.models.Mayor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,5 +15,9 @@ public class AppService {
 
     public List<Mayor> getFakeMayorData() {
         return dao.getFakeMayorData();
+    }
+
+    public List<Governor> getFakeGovernorData() {
+        return dao.getFakeGovernorData();
     }
 }

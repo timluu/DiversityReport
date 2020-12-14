@@ -1,5 +1,6 @@
 package com.talentpath.DiversityReport.controllers;
 
+import com.talentpath.DiversityReport.models.Governor;
 import com.talentpath.DiversityReport.models.Mayor;
 import com.talentpath.DiversityReport.services.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,9 @@ public class AppController {
     }
 
     @GetMapping("/governors")
-    public void getGovernors() { }
+    public List<Governor> getGovernors() {
+        return service.getFakeGovernorData();
+    }
 
     @GetMapping("/congress")
     public void getCongressPeople() { }

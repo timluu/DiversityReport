@@ -60,8 +60,48 @@ public class AppDao {
         return fakeMayorData;
     }
 
-    public Governor[] getFakeGovernorData() {
-        return null;
+    public List<Governor> getFakeGovernorData() {
+        List<Governor> fakeGovernorData = new ArrayList<>();
+        Governor fakeGovernor1 = new Governor();
+        fakeGovernor1.setId(1);
+        fakeGovernor1.setFullName("Arnie Schwarz");
+        fakeGovernor1.setState("California");
+        fakeGovernor1.setYearBegan(2000);
+        fakeGovernor1.setYearEnded(2010);
+        fakeGovernor1.setEthnicity("White");
+        fakeGovernor1.setGender("Male");
+        fakeGovernor1.setBirthYear(1950);
+        fakeGovernor1.setAppointmentAge(50);
+        fakeGovernor1.setIsAlive(1);
+
+        Governor fakeGovernor2 = new Governor();
+        fakeGovernor2.setId(2);
+        fakeGovernor2.setFullName("Dude Jones");
+        fakeGovernor2.setState("New York");
+        fakeGovernor2.setYearBegan(2010);
+        fakeGovernor2.setYearEnded(2020);
+        fakeGovernor2.setEthnicity("African American");
+        fakeGovernor2.setGender("Male");
+        fakeGovernor2.setBirthYear(1900);
+        fakeGovernor2.setAppointmentAge(110);
+        fakeGovernor2.setIsAlive(0);
+
+        Governor fakeGovernor3 = new Governor();
+        fakeGovernor3.setId(3);
+        fakeGovernor3.setFullName("Hilary Bilary");
+        fakeGovernor3.setState("Texas");
+        fakeGovernor3.setYearBegan(2005);
+        fakeGovernor3.setYearEnded(2015);
+        fakeGovernor3.setEthnicity("Asian");
+        fakeGovernor3.setGender("Female");
+        fakeGovernor3.setBirthYear(2000);
+        fakeGovernor3.setAppointmentAge(5);
+        fakeGovernor3.setIsAlive(1);
+
+        fakeGovernorData.add(fakeGovernor1);
+        fakeGovernorData.add(fakeGovernor2);
+        fakeGovernorData.add(fakeGovernor3);
+        return fakeGovernorData;
     }
 
     public CongressPerson[] getFakeCongressData() {
