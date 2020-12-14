@@ -1,6 +1,7 @@
 package com.talentpath.DiversityReport.models;
 
 public class Mayor {
+    Integer id;
     String fullName;
     String city;
     String state;
@@ -15,6 +16,14 @@ public class Mayor {
     String religion;
     String previousOccupation;
     String photoUrl;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getFullName() {
         return fullName;

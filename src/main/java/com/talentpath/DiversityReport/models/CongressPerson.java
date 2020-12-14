@@ -1,6 +1,7 @@
 package com.talentpath.DiversityReport.models;
 
 public class CongressPerson {
+    Integer id;
     String fullName;
     String state;
     String governmentSeat;
@@ -12,6 +13,14 @@ public class CongressPerson {
     Integer appointmentAge;
     Integer totalTerms;
     String photoUrl;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getFullName() {
         return fullName;

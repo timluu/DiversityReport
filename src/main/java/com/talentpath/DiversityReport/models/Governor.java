@@ -1,6 +1,7 @@
 package com.talentpath.DiversityReport.models;
 
 public class Governor {
+    Integer id;
     String fullName;
     String state;
     Integer yearBegan;
@@ -14,6 +15,14 @@ public class Governor {
     String religion;
     String previousOccupation;
     String photoUrl;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getFullName() {
         return fullName;
