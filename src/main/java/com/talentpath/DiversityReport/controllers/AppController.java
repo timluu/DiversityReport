@@ -13,8 +13,17 @@ public class AppController {
     @Autowired
     AppService service;
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public String getTest() {
         return service.getTest();
     }
+
+    @GetMapping("/mayors")
+    public void getMayors() { }
+
+    @GetMapping("/governors")
+    public void getGovernors() { }
+
+    @GetMapping("/congress")
+    public void getCongressPeople() { }
 }
