@@ -104,8 +104,66 @@ public class AppDao {
         return fakeGovernorData;
     }
 
-    public CongressPerson[] getFakeCongressData() {
-        return null;
+    public List<CongressPerson> getFakeCongressData() {
+        // temporarily taking out ethnicity data
+        List<CongressPerson> fakeCongressPersonData = new ArrayList<>();
+        CongressPerson fakeCongressPerson1 = new CongressPerson();
+        fakeCongressPerson1.setId(1);
+        fakeCongressPerson1.setFullName("Joe Jones");
+        fakeCongressPerson1.setState("North Dakota");
+        fakeCongressPerson1.setGovernmentSeat("Senator");
+        fakeCongressPerson1.setYearBegan(2000);
+        fakeCongressPerson1.setYearEnded(2010);
+//        fakeCongressPerson1.setEthnicity("White");
+        fakeCongressPerson1.setGender("Male");
+        fakeCongressPerson1.setBirthYear(1950);
+        fakeCongressPerson1.setAppointmentAge(50);
+        fakeCongressPerson1.setTotalTerms(2);
+
+        CongressPerson fakeCongressPerson2 = new CongressPerson();
+        fakeCongressPerson2.setId(2);
+        fakeCongressPerson2.setFullName("Joesph Jones");
+        fakeCongressPerson2.setState("North Dakota");
+        fakeCongressPerson2.setGovernmentSeat("Representative");
+        fakeCongressPerson2.setYearBegan(2000);
+        fakeCongressPerson2.setYearEnded(2010);
+//        fakeCongressPerson2.setEthnicity("African American");
+        fakeCongressPerson2.setGender("Male");
+        fakeCongressPerson2.setBirthYear(1960);
+        fakeCongressPerson2.setAppointmentAge(40);
+        fakeCongressPerson2.setTotalTerms(5);
+
+        CongressPerson fakeCongressPerson3 = new CongressPerson();
+        fakeCongressPerson3.setId(3);
+        fakeCongressPerson3.setFullName("Bob Smith");
+        fakeCongressPerson3.setState("Alaska");
+        fakeCongressPerson3.setGovernmentSeat("Senator");
+        fakeCongressPerson3.setYearBegan(1990);
+        fakeCongressPerson3.setYearEnded(2000);
+//        fakeCongressPerson3.setEthnicity("Hispanic");
+        fakeCongressPerson3.setGender("Male");
+        fakeCongressPerson3.setBirthYear(1950);
+        fakeCongressPerson3.setAppointmentAge(40);
+        fakeCongressPerson3.setTotalTerms(2);
+
+        CongressPerson fakeCongressPerson4 = new CongressPerson();
+        fakeCongressPerson4.setId(4);
+        fakeCongressPerson4.setFullName("Roberta Smith");
+        fakeCongressPerson4.setState("Alaska");
+        fakeCongressPerson4.setGovernmentSeat("Representative");
+        fakeCongressPerson4.setYearBegan(1950);
+        fakeCongressPerson4.setYearEnded(1952);
+//        fakeCongressPerson4.setEthnicity("Asian");
+        fakeCongressPerson4.setGender("Female");
+        fakeCongressPerson4.setBirthYear(1900);
+        fakeCongressPerson4.setAppointmentAge(50);
+        fakeCongressPerson4.setTotalTerms(1);
+
+        fakeCongressPersonData.add(fakeCongressPerson1);
+        fakeCongressPersonData.add(fakeCongressPerson2);
+        fakeCongressPersonData.add(fakeCongressPerson3);
+        fakeCongressPersonData.add(fakeCongressPerson4);
+        return fakeCongressPersonData;
     }
 
 

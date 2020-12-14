@@ -1,5 +1,6 @@
 package com.talentpath.DiversityReport.controllers;
 
+import com.talentpath.DiversityReport.models.CongressPerson;
 import com.talentpath.DiversityReport.models.Governor;
 import com.talentpath.DiversityReport.models.Mayor;
 import com.talentpath.DiversityReport.services.AppService;
@@ -28,5 +29,7 @@ public class AppController {
     }
 
     @GetMapping("/congress")
-    public void getCongressPeople() { }
+    public List<CongressPerson> getCongressPeople() {
+        return service.getFakeCongressData();
+    }
 }
