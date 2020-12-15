@@ -1,4 +1,4 @@
-const base = 'http://ec2-34-237-166-54.compute-1.amazonaws.com';
+const base = 'http://govt-diversity.herokuapp.com';
 const method = "GET";
 
 const loadTest = () => {
