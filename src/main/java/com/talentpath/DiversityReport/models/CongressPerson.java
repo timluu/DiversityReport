@@ -4,7 +4,6 @@ public class CongressPerson {
     Integer id;
     String fullName;
     String state;
-    String governmentSeat;
     Integer yearBegan;
     Integer yearEnded;
     String ethnicity;
@@ -13,6 +12,15 @@ public class CongressPerson {
     Integer appointmentAge;
     Integer totalTerms;
     String photoUrl;
+    String religion;
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
 
     public Integer getId() {
         return id;
@@ -36,14 +44,6 @@ public class CongressPerson {
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    public String getGovernmentSeat() {
-        return governmentSeat;
-    }
-
-    public void setGovernmentSeat(String governmentSeat) {
-        this.governmentSeat = governmentSeat;
     }
 
     public Integer getYearBegan() {

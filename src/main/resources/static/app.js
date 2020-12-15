@@ -22,20 +22,19 @@ const displayTable = (position, members) => {
     header.append("<th>Full Name</th>");
     if (position === "mayors") header.append("<th>City</th>");
     header.append("<th>State</th>");
-    if (position === "congress") header.append("<th>Government Seat</th>");
     header.append("<th>Year Began</th>");
     header.append("<th>Year Ended</th>");
     header.append("<th>Ethnicity</th>");
     header.append("<th>Gender</th>");
     header.append("<th>Birth Year</th>");
     header.append("<th>Appointment Age</th>");
+    header.append("<th>Religion</th>");
     if (position === "mayors" || position === "governors") {
         header.append("<th>Alive</th>");
         header.append("<th>Income</th>");
-        header.append("<th>Religion</th>");
         header.append("<th>Previous Occupation</th>");
     }
-    if (position === "congress") header.append("<th>Total Terms</th>");
+    if (position === "senators" || position === "representatives") header.append("<th>Total Terms</th>");
     header.append("<th>Photo Url</th>");
     table.append(header);
 
@@ -45,20 +44,19 @@ const displayTable = (position, members) => {
         row.append(`<td>${member.fullName}</td>`);
         if (position === "mayors") row.append(`<td>${member.city}</td>`);
         row.append(`<td>${member.state}</td>`);
-        if (position === "congress") row.append(`<td>${member.governmentSeat}</td>`);
         row.append(`<td>${member.yearBegan}</td>`);
         row.append(`<td>${member.yearEnded}</td>`);
         row.append(`<td>${member.ethnicity}</td>`);
         row.append(`<td>${member.gender}</td>`);
         row.append(`<td>${member.birthYear}</td>`);
         row.append(`<td>${member.appointmentAge}</td>`);
+        row.append(`<td>${member.religion}</td>`);
         if (position === "mayors" || position === "governors") {
             row.append(`<td>${member.isAlive}</td>`);
             row.append(`<td>${member.income}</td>`);
-            row.append(`<td>${member.religion}</td>`);
             row.append(`<td>${member.previousOccupation}</td>`);
         }
-        if (position === "congress") row.append(`<td>${member.totalTerms}</td>`);
+        if (position === "senators" || position === "representatives") row.append(`<td>${member.totalTerms}</td>`);
         row.append(`<td>${member.photoUrl}</td>`);
         table.append(row);
     }

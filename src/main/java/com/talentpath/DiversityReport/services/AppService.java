@@ -18,6 +18,20 @@ public class AppService {
         return dao.getMayorData();
     }
 
+    public List<Governor> getGovernorData() {
+        return dao.getGovernorData();
+    }
+
+    public List<CongressPerson> getSenatorData() {
+        return dao.getSenatorData();
+    }
+
+    public List<CongressPerson> getRepresentativeData() {
+        return dao.getRepresentativeData();
+    }
+
+    // BELOW ARE USED ONLY FOR INITIAL SETUP
+
     public List<Mayor> getFakeMayorData() {
         return dao.getFakeMayorData();
     }
