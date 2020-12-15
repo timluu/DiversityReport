@@ -1,4 +1,4 @@
-const base = 'http://localhost:8080';
+const base = 'http://ec2-34-237-166-54.compute-1.amazonaws.com';
 const method = "GET";
 
 const load = (position) => {
