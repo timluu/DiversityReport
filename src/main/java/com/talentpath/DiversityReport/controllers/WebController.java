@@ -12,8 +12,8 @@ public class WebController {
         return "index.html";
     }
 
-    @GetMapping("")
-    public String homePage() {
-        return "index";
-    }
+//    @GetMapping("")
+//    public String homePage() {
+//        return "index";
+//    }
 }
