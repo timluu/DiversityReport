@@ -1,6 +1,15 @@
 const base = 'http://ec2-34-237-166-54.compute-1.amazonaws.com';
 const method = "GET";
 
+const loadTest = () => {
+    const url = base + '/api/test';
+    const success = (response) => {
+        console.log(response);
+    };
+
+    $.ajax({ url, method, success });
+};
+
 const load = (position) => {
     
     const url = base + `/api/${position}`;
