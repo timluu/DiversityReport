@@ -10,7 +10,7 @@ public class WebController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World Index!";
+        return "index";
     }
 
     @GetMapping("")
