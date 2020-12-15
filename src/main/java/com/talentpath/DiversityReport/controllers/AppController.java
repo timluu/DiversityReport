@@ -20,17 +20,21 @@ public class AppController {
 
     @GetMapping("/mayors")
     public List<Mayor> getMayors() {
-//        return service.getFakeMayorData();
         return service.getMayorData();
     }
 
     @GetMapping("/governors")
     public List<Governor> getGovernors() {
-        return service.getFakeGovernorData();
+        return service.getGovernorData();
     }
 
-    @GetMapping("/congress")
-    public List<CongressPerson> getCongressPeople() {
-        return service.getFakeCongressData();
+    @GetMapping("/senators")
+    public List<CongressPerson> getSenators() {
+        return service.getSenatorData();
+    }
+
+    @GetMapping("/representatives")
+    public List<CongressPerson> getRepresentatives() {
+        return service.getRepresentativeData();
     }
 }

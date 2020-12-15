@@ -26,6 +26,21 @@ public class AppDao {
         return mayors;
     }
 
+    public List<Governor> getGovernorData() {
+        List<Governor> governors = template.query("select * from \"Governors\";", new GovernorMapper());
+        return governors;
+    }
+
+    public List<CongressPerson> getSenatorData() {
+        List<CongressPerson> senators = template.query("select * from \"Senators\";", new CongressMapper());
+        return senators;
+    }
+
+    public List<CongressPerson> getRepresentativeData() {
+        List<CongressPerson> representatives = template.query("select * from \"Representatives\";", new CongressMapper());
+        return representatives;
+    }
+
     class MayorMapper implements RowMapper {
 
         @Override
@@ -38,6 +53,7 @@ public class AppDao {
             Integer yearEnded = resultSet.getInt("yearEnded");
             String ethnicity = resultSet.getString("ethnicity");
             Integer birthYear = resultSet.getInt("birthYear");
+            String gender = resultSet.getString("gender");
             Integer appointmentAge = resultSet.getInt("appointmentAge");
             Integer isAlive = resultSet.getInt("isAlive");
             Integer income = resultSet.getInt("income");
@@ -54,6 +70,7 @@ public class AppDao {
             mayor.setYearEnded(yearEnded);
             mayor.setEthnicity(ethnicity);
             mayor.setBirthYear(birthYear);
+            mayor.setGender(gender);
             mayor.setAppointmentAge(appointmentAge);
             mayor.setIsAlive(isAlive);
             mayor.setIncome(income);
@@ -64,6 +81,82 @@ public class AppDao {
             return mayor;
         }
     }
+
+    class GovernorMapper implements RowMapper {
+
+        @Override
+        public Governor mapRow(ResultSet resultSet, int i) throws SQLException {
+            Integer id = resultSet.getInt("id");
+            String fullName = resultSet.getString("fullName");
+            String state = resultSet.getString("state");
+            Integer yearBegan = resultSet.getInt("yearBegan");
+            Integer yearEnded = resultSet.getInt("yearEnded");
+            String ethnicity = resultSet.getString("ethnicity");
+            Integer birthYear = resultSet.getInt("birthYear");
+            String gender = resultSet.getString("gender");
+            Integer appointmentAge = resultSet.getInt("appointmentAge");
+            Integer isAlive = resultSet.getInt("isAlive");
+            Integer income = resultSet.getInt("income");
+            String religion = resultSet.getString("religion");
+            String previousOccupation = resultSet.getString("previousOccupation");
+            String photoUrl = resultSet.getString("photoUrl");
+
+            Governor governor = new Governor();
+            governor.setId(id);
+            governor.setFullName(fullName);
+            governor.setState(state);
+            governor.setYearBegan(yearBegan);
+            governor.setYearEnded(yearEnded);
+            governor.setEthnicity(ethnicity);
+            governor.setBirthYear(birthYear);
+            governor.setGender(gender);
+            governor.setAppointmentAge(appointmentAge);
+            governor.setIsAlive(isAlive);
+            governor.setIncome(income);
+            governor.setReligion(religion);
+            governor.setPreviousOccupation(previousOccupation);
+            governor.setPhotoUrl(photoUrl);
+
+            return governor;
+        }
+    }
+
+    class CongressMapper implements RowMapper {
+
+        @Override
+        public CongressPerson mapRow(ResultSet resultSet, int i) throws SQLException {
+            Integer id = resultSet.getInt("id");
+            String fullName = resultSet.getString("fullName");
+            String state = resultSet.getString("state");
+            Integer totalTerms = resultSet.getInt("totalTerms");
+            Integer yearBegan = resultSet.getInt("yearBegan");
+            Integer yearEnded = resultSet.getInt("yearEnded");
+            String ethnicity = resultSet.getString("ethnicity");
+            Integer birthYear = resultSet.getInt("birthYear");
+            String gender = resultSet.getString("gender");
+            Integer appointmentAge = resultSet.getInt("appointmentAge");
+            String religion = resultSet.getString("religion");
+            String photoUrl = resultSet.getString("photoUrl");
+
+            CongressPerson congressPerson = new CongressPerson();
+            congressPerson.setId(id);
+            congressPerson.setFullName(fullName);
+            congressPerson.setState(state);
+            congressPerson.setTotalTerms(totalTerms);
+            congressPerson.setYearBegan(yearBegan);
+            congressPerson.setYearEnded(yearEnded);
+            congressPerson.setEthnicity(ethnicity);
+            congressPerson.setBirthYear(birthYear);
+            congressPerson.setGender(gender);
+            congressPerson.setAppointmentAge(appointmentAge);
+            congressPerson.setReligion(religion);
+            congressPerson.setPhotoUrl(photoUrl);
+
+            return congressPerson;
+        }
+    }
+
+    // BELOW ARE USED ONLY FOR INITIAL SETUP
 
     public List<Mayor> getFakeMayorData() {
         List<Mayor> fakeMayorData = new ArrayList<>();
@@ -163,7 +256,6 @@ public class AppDao {
         fakeCongressPerson1.setId(1);
         fakeCongressPerson1.setFullName("Joe Jones");
         fakeCongressPerson1.setState("North Dakota");
-        fakeCongressPerson1.setGovernmentSeat("Senator");
         fakeCongressPerson1.setYearBegan(2000);
         fakeCongressPerson1.setYearEnded(2010);
 //        fakeCongressPerson1.setEthnicity("White");
@@ -176,7 +268,6 @@ public class AppDao {
         fakeCongressPerson2.setId(2);
         fakeCongressPerson2.setFullName("Joesph Jones");
         fakeCongressPerson2.setState("North Dakota");
-        fakeCongressPerson2.setGovernmentSeat("Representative");
         fakeCongressPerson2.setYearBegan(2000);
         fakeCongressPerson2.setYearEnded(2010);
 //        fakeCongressPerson2.setEthnicity("African American");
@@ -189,7 +280,6 @@ public class AppDao {
         fakeCongressPerson3.setId(3);
         fakeCongressPerson3.setFullName("Bob Smith");
         fakeCongressPerson3.setState("Alaska");
-        fakeCongressPerson3.setGovernmentSeat("Senator");
         fakeCongressPerson3.setYearBegan(1990);
         fakeCongressPerson3.setYearEnded(2000);
 //        fakeCongressPerson3.setEthnicity("Hispanic");
@@ -202,7 +292,6 @@ public class AppDao {
         fakeCongressPerson4.setId(4);
         fakeCongressPerson4.setFullName("Roberta Smith");
         fakeCongressPerson4.setState("Alaska");
-        fakeCongressPerson4.setGovernmentSeat("Representative");
         fakeCongressPerson4.setYearBegan(1950);
         fakeCongressPerson4.setYearEnded(1952);
 //        fakeCongressPerson4.setEthnicity("Asian");
