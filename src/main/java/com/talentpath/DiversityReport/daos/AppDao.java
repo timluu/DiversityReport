@@ -3,15 +3,67 @@ package com.talentpath.DiversityReport.daos;
 import com.talentpath.DiversityReport.models.CongressPerson;
 import com.talentpath.DiversityReport.models.Governor;
 import com.talentpath.DiversityReport.models.Mayor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 @Profile({"production"})
 public class AppDao {
+
+    @Autowired
+    JdbcTemplate template;
+
+    public List<Mayor> getMayorData() {
+        List<Mayor> mayors = template.query("select * from \"Mayors\";", new MayorMapper());
+        return mayors;
+    }
+
+    class MayorMapper implements RowMapper {
+
+        @Override
+        public Mayor mapRow(ResultSet resultSet, int i) throws SQLException {
+            Integer id = resultSet.getInt("id");
+            String fullName = resultSet.getString("fullName");
+            String city = resultSet.getString("city");
+            String state = resultSet.getString("state");
+            Integer yearBegan = resultSet.getInt("yearBegan");
+            Integer yearEnded = resultSet.getInt("yearEnded");
+            String ethnicity = resultSet.getString("ethnicity");
+            Integer birthYear = resultSet.getInt("birthYear");
+            Integer appointmentAge = resultSet.getInt("appointmentAge");
+            Integer isAlive = resultSet.getInt("isAlive");
+            Integer income = resultSet.getInt("income");
+            String religion = resultSet.getString("religion");
+            String previousOccupation = resultSet.getString("previousOccupation");
+            String photoUrl = resultSet.getString("photoUrl");
+
+            Mayor mayor = new Mayor();
+            mayor.setId(id);
+            mayor.setFullName(fullName);
+            mayor.setCity(city);
+            mayor.setState(state);
+            mayor.setYearBegan(yearBegan);
+            mayor.setYearEnded(yearEnded);
+            mayor.setEthnicity(ethnicity);
+            mayor.setBirthYear(birthYear);
+            mayor.setAppointmentAge(appointmentAge);
+            mayor.setIsAlive(isAlive);
+            mayor.setIncome(income);
+            mayor.setReligion(religion);
+            mayor.setPreviousOccupation(previousOccupation);
+            mayor.setPhotoUrl(photoUrl);
+
+            return mayor;
+        }
+    }
 
     public List<Mayor> getFakeMayorData() {
         List<Mayor> fakeMayorData = new ArrayList<>();

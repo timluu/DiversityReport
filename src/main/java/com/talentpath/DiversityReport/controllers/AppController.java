@@ -20,7 +20,8 @@ public class AppController {
 
     @GetMapping("/mayors")
     public List<Mayor> getMayors() {
-        return service.getFakeMayorData();
+//        return service.getFakeMayorData();
+        return service.getMayorData();
     }
 
     @GetMapping("/governors")

@@ -14,6 +14,10 @@ public class AppService {
     @Autowired
     AppDao dao;
 
+    public List<Mayor> getMayorData() {
+        return dao.getMayorData();
+    }
+
     public List<Mayor> getFakeMayorData() {
         return dao.getFakeMayorData();
     }
