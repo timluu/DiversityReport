@@ -18,11 +18,6 @@ public class AppController {
     @Autowired
     AppService service;
 
-    @GetMapping("/test")
-    public String getTest() {
-        return "the test is working";
-    }
-
     @GetMapping("/mayors")
     public List<Mayor> getMayors() {
         return service.getMayorData();
