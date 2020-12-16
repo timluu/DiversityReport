@@ -12,6 +12,11 @@ public class WebController {
         return "index.html";
     }
 
+    @RequestMapping("/indexTest")
+    public String indexTest() {
+        return "indexTables.html";
+    }
+
     @RequestMapping("/mayors")
     public String mayors() {
         return "mayors.html";
