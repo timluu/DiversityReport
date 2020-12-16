@@ -1,15 +1,6 @@
 const base = 'http://govt-diversity.herokuapp.com';
 const method = "GET";
 
-const loadTest = () => {
-    const url = base + '/api/test';
-    const success = (response) => {
-        console.log(response);
-    };
-
-    $.ajax({ url, method, success });
-};
-
 const load = (position) => {
     
     const url = base + `/api/${position}`;

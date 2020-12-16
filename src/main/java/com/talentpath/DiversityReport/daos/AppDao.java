@@ -22,7 +22,7 @@ public class AppDao {
     JdbcTemplate template;
 
     public List<Mayor> getMayorData() {
-        List<Mayor> mayors = template.query("select * from Mayors;", new MayorMapper());
+        List<Mayor> mayors = template.query("select * from \"Mayors\";", new MayorMapper());
         return mayors;
     }
 
