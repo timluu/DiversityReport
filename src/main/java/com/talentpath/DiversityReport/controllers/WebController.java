@@ -12,6 +12,31 @@ public class WebController {
         return "index.html";
     }
 
+    @RequestMapping("/mayors")
+    public String mayors() {
+        return "mayors.html";
+    }
+
+    @RequestMapping("/governors")
+    public String governors() {
+        return "governors.html";
+    }
+
+    @RequestMapping("/representatives")
+    public String representatives() {
+        return "representatives.html";
+    }
+
+    @RequestMapping("/senators")
+    public String senators() {
+        return "senators.html";
+    }
+
+
+
+
+
+
     @GetMapping("")
     public String homePage() {
         return "index";
