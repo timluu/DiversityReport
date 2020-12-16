@@ -17,6 +17,8 @@ const displayTable = (position, members) => {
     const table = $(`#${position}Table`);
     table.append(`<caption>${position.toUpperCase()}</caption>`);
     const header = $('<div class="header"></div>');
+    console.log(table);
+    console.log(header);
     
     header.append("<div>ID</div>");
     header.append("<div>Full Name</div>");
