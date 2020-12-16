@@ -39,7 +39,7 @@ const displayTable = (position, members) => {
     table.append(header);
 
     for (let member of members) {
-        let row = $('<div class="row"></tr>');
+        let row = $('<div class="row"></div>');
         row.append(`<div>${member.id}</div>`);
         row.append(`<div>${member.fullName}</div>`);
         if (position === "mayors") row.append(`<div>${member.city}</div>`);
