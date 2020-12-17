@@ -95,6 +95,11 @@ public class AppDao {
             leader.setYear1983(year1983);
             leader.setYear1985(year1985);
             leader.setYear1987(year1987);
+            leader.setYear1987(year1989);
+            leader.setYear1987(year1991);
+            leader.setYear1987(year1993);
+            leader.setYear1987(year1995);
+            leader.setYear1987(year1997);
             leader.setYear1999(year1999);
             leader.setYear2001(year2001);
             leader.setYear2003(year2003);
