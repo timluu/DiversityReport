@@ -34,5 +34,5 @@ public class AppService {
     public List<CongressDiversity> getSenateDiversityData() { return dao.getSenatorDiversityData(); }
 
     public List<CongressDiversity> getRepresentativesDiversityData() { return dao.getRepresentativeDiversityData(); }
-    
+
 }

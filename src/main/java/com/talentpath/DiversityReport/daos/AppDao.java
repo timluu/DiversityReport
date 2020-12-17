@@ -43,7 +43,7 @@ public class AppDao {
     }
 
     public List<CongressDiversity> getSenatorDiversityData() {
-        List<CongressDiversity> representatitivesDiv = template.query("SELECT id, \"Category\", \"1971\", \"1973\", \"1975\", \"1977\", \"1979\", \"1981\", \"1983\", \"1985\", \"1987\", \"1989\", \"1991\", \"1993\", \"1995\", \"1997\", \"1999\", \"2001\", \"2003 \", \"2005\", \"2007\", \"2009\", \"2011\", \"2013\", \"2015\", \"2017\", \"Type\"\n" +
+        List<CongressDiversity> representatitivesDiv = template.query("SELECT id, \"Category\", \"1971\", \"1973\", \"1975\", \"1977\", \"1979\", \"1981\", \"1983\", \"1985\", \"1987\", \"1989\", \"1991\", \"1993\", \"1995\", \"1997\", \"1999\", \"2001\", \"2003\", \"2005\", \"2007\", \"2009\", \"2011\", \"2013\", \"2015\", \"2017\", \"Type\"\n" +
                 "\tFROM public.\"HouseDiversity\";", new CongressDiversityMapper());
         return representatitivesDiv;
     }
