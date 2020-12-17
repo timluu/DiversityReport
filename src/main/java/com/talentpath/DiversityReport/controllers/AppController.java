@@ -1,5 +1,6 @@
 package com.talentpath.DiversityReport.controllers;
 
+import com.talentpath.DiversityReport.models.CongressDiversity;
 import com.talentpath.DiversityReport.models.CongressPerson;
 import com.talentpath.DiversityReport.models.Governor;
 import com.talentpath.DiversityReport.models.Mayor;
@@ -37,4 +38,11 @@ public class AppController {
     public List<CongressPerson> getRepresentatives() {
         return service.getRepresentativeData();
     }
+
+    @GetMapping("/senatorsDiversity")
+    public List<CongressDiversity> getSenateDiversity(){return service.getSenateDiversityData();}
+
+    @GetMapping("/representativesDiversity")
+    public List<CongressDiversity> getRepresentativesDiversity(){return service.getRepresentativesDiversityData();}
+
 }

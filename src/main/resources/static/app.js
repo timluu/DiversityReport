@@ -12,6 +12,82 @@ const load = (position) => {
 
 };
 
+const loadDiversity = (position) => {
+
+    const url = base + `/api/${position}Diversity`;
+    const success = (response) => {
+        displayTableDiversity(position, response);
+    };
+
+    $.ajax({ url, method, success });
+
+};
+
+const displayTableDiversity = (position, members) => {
+    const table = $(`#${position}TableDiversity`);
+    table.append(`<caption>${position.toUpperCase()} Diversity</caption>`);
+    const header = $('<tr class="header"></tr>');
+
+    header.append("<th>ID</th>");
+    header.append("<th>Category</th>");
+    header.append("<th>1971</th>");
+    header.append("<th>1973</th>");
+    header.append("<th>1975</th>");
+    header.append("<th>1977</th>");
+    header.append("<th>1979</th>");
+    header.append("<th>1981</th>");
+    header.append("<th>1983</th>");
+    header.append("<th>1985</th>");
+    header.append("<th>1987</th>");
+    header.append("<th>1989</th>");
+    header.append("<th>1991</th>");
+    header.append("<th>1993</th>");
+    header.append("<th>1995</th>");
+    header.append("<th>1997</th>");
+    header.append("<th>1999</th>");
+    header.append("<th>2001</th>");
+    header.append("<th>2003</th>");
+    header.append("<th>2005</th>");
+    header.append("<th>2007</th>");
+    header.append("<th>2009</th>");
+    header.append("<th>2011</th>");
+    header.append("<th>2013</th>");
+    header.append("<th>2015</th>");
+    header.append("<th>2017</th>");
+    header.append("<th>Type</th>");
+
+    for(let member of members){
+        let row = $('<tr class="row"></tr>');
+        row.append(`<td>${member.id}</td>`);
+        row.append(`<td>${member.category}</td>`);
+        row.append(`<td>${member.year1971}</td>`);
+        row.append(`<td>${member.year1973}</td>`);
+        row.append(`<td>${member.year1975}</td>`);
+        row.append(`<td>${member.year1977}</td>`);
+        row.append(`<td>${member.year1979}</td>`);
+        row.append(`<td>${member.year1981}</td>`);
+        row.append(`<td>${member.year1983}</td>`);
+        row.append(`<td>${member.year1985}</td>`);
+        row.append(`<td>${member.year1987}</td>`);
+        row.append(`<td>${member.year1989}</td>`);
+        row.append(`<td>${member.year1991}</td>`);
+        row.append(`<td>${member.year1993}</td>`);
+        row.append(`<td>${member.year1995}</td>`);
+        row.append(`<td>${member.year1997}</td>`);
+        row.append(`<td>${member.year1999}</td>`);
+        row.append(`<td>${member.year2001}</td>`);
+        row.append(`<td>${member.year2003}</td>`);
+        row.append(`<td>${member.year2005}</td>`);
+        row.append(`<td>${member.year2007}</td>`);
+        row.append(`<td>${member.year2009}</td>`);
+        row.append(`<td>${member.year2011}</td>`);
+        row.append(`<td>${member.year2013}</td>`);
+        row.append(`<td>${member.year2015}</td>`);
+        row.append(`<td>${member.year2017}</td>`);
+        row.append(`<td>${member.type}</td>`);
+    }
+};
+
 const displayTable = (position, members) => {
     
     const table = $(`#${position}Table`);
