@@ -31,23 +31,8 @@ public class AppService {
         return dao.getRepresentativeData();
     }
 
-    public List<CongressDiversity> getSenateDiversityData() {return dao.getSenatorDiversityData();}
+    public List<CongressDiversity> getSenateDiversityData() { return dao.getSenatorDiversityData(); }
 
-    public List<CongressDiversity> getRepresentativesDiversityData() {return dao.getRepresentativeDiversityData();}
-
-    // BELOW ARE USED ONLY FOR INITIAL SETUP
-
-    public List<Mayor> getFakeMayorData() {
-        return dao.getFakeMayorData();
-    }
-
-    public List<Governor> getFakeGovernorData() {
-        return dao.getFakeGovernorData();
-    }
-
-    public List<CongressPerson> getFakeCongressData() {
-        return dao.getFakeCongressData();
-    }
-
-
+    public List<CongressDiversity> getRepresentativesDiversityData() { return dao.getRepresentativeDiversityData(); }
+    
 }

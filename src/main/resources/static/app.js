@@ -24,8 +24,8 @@ const loadDiversity = (position) => {
 };
 
 const displayTableDiversity = (position, members) => {
-    const table = $(`#${position}TableDiversity`);
-    table.append(`<caption>${position.toUpperCase()} Diversity</caption>`);
+    const table = $(`#${position}DiversityTable`);
+    table.append(`<caption>${position.toUpperCase()} DIVERSITY</caption>`);
     const header = $('<tr class="header"></tr>');
 
     header.append("<th>ID</th>");
@@ -55,6 +55,7 @@ const displayTableDiversity = (position, members) => {
     header.append("<th>2015</th>");
     header.append("<th>2017</th>");
     header.append("<th>Type</th>");
+    table.append(header);
 
     for(let member of members){
         let row = $('<tr class="row"></tr>');
@@ -85,6 +86,7 @@ const displayTableDiversity = (position, members) => {
         row.append(`<td>${member.year2015}</td>`);
         row.append(`<td>${member.year2017}</td>`);
         row.append(`<td>${member.type}</td>`);
+        table.append(row);
     }
 };
 

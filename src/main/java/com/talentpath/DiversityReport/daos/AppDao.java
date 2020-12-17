@@ -54,7 +54,7 @@ public class AppDao {
         return senatorsDiv;
     }
 
-    class CongressDiversityMapper implements RowMapper{
+    class CongressDiversityMapper implements RowMapper {
 
         @Override
         public Object mapRow(ResultSet resultSet, int i) throws SQLException {

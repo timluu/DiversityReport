@@ -40,9 +40,9 @@ public class AppController {
     }
 
     @GetMapping("/senatorsDiversity")
-    public List<CongressDiversity> getSenateDiversity(){return service.getSenateDiversityData();}
+    public List<CongressDiversity> getSenateDiversity() { return service.getSenateDiversityData(); }
 
     @GetMapping("/representativesDiversity")
-    public List<CongressDiversity> getRepresentativesDiversity(){return service.getRepresentativesDiversityData();}
+    public List<CongressDiversity> getRepresentativesDiversity() { return service.getRepresentativesDiversityData(); }
 
 }
