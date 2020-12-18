@@ -64,6 +64,7 @@ public class AppDao {
             CongressDiversity leader = new CongressDiversity();
             leader.setId(id);
             leader.setCategory(category);
+            leader.setType(type);
             leader.setCount(count);
             leader.setYear(year);
             return leader;
