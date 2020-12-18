@@ -43,12 +43,12 @@ public class AppDao {
     }
 
     public List<CongressDiversity> getSenatorDiversityData() {
-        List<CongressDiversity> senatorsDiv = template.query("select * from \"SenateDiversity\";", new CongressDiversityMapper());
+        List<CongressDiversity> senatorsDiv = template.query("select * from \"SenatorsDiversity\";", new CongressDiversityMapper());
         return senatorsDiv;
     }
 
     public List<CongressDiversity> getRepresentativeDiversityData() {
-        List<CongressDiversity> representativesDiv = template.query("select * from \"HouseDiversity\";", new CongressDiversityMapper());
+        List<CongressDiversity> representativesDiv = template.query("select * from \"RepresentativesDiversity\";", new CongressDiversityMapper());
         return representativesDiv;
     }
 
@@ -58,61 +58,15 @@ public class AppDao {
         public Object mapRow(ResultSet resultSet, int i) throws SQLException {
             Integer id = resultSet.getInt("id");
             String category = resultSet.getString("Category");
-            Integer year1971 = resultSet.getInt("1971");
-            Integer year1973 = resultSet.getInt("1973");
-            Integer year1975 = resultSet.getInt("1975");
-            Integer year1977 = resultSet.getInt("1977");
-            Integer year1979 = resultSet.getInt("1979");
-            Integer year1981 = resultSet.getInt("1981");
-            Integer year1983 = resultSet.getInt("1983");
-            Integer year1985 = resultSet.getInt("1985");
-            Integer year1987 = resultSet.getInt("1987");
-            Integer year1989 = resultSet.getInt("1989");
-            Integer year1991 = resultSet.getInt("1991");
-            Integer year1993 = resultSet.getInt("1993");
-            Integer year1995 = resultSet.getInt("1995");
-            Integer year1997 = resultSet.getInt("1997");
-            Integer year1999 = resultSet.getInt("1999");
-            Integer year2001 = resultSet.getInt("2001");
-            Integer year2003 = resultSet.getInt("2003");
-            Integer year2005 = resultSet.getInt("2005");
-            Integer year2007 = resultSet.getInt("2007");
-            Integer year2009 = resultSet.getInt("2009");
-            Integer year2011 = resultSet.getInt("2011");
-            Integer year2013 = resultSet.getInt("2013");
-            Integer year2015 = resultSet.getInt("2015");
-            Integer year2017 = resultSet.getInt("2017");
             String type = resultSet.getString("Type");
+            Integer count = resultSet.getInt("Count");
+            Integer year = resultSet.getInt("Year");
             CongressDiversity leader = new CongressDiversity();
             leader.setId(id);
             leader.setCategory(category);
-            leader.setYear1971(year1971);
-            leader.setYear1973(year1973);
-            leader.setYear1975(year1975);
-            leader.setYear1977(year1977);
-            leader.setYear1979(year1979);
-            leader.setYear1981(year1981);
-            leader.setYear1983(year1983);
-            leader.setYear1985(year1985);
-            leader.setYear1987(year1987);
-            leader.setYear1989(year1989);
-            leader.setYear1991(year1991);
-            leader.setYear1993(year1993);
-            leader.setYear1995(year1995);
-            leader.setYear1997(year1997);
-            leader.setYear1999(year1999);
-            leader.setYear2001(year2001);
-            leader.setYear2003(year2003);
-            leader.setYear2005(year2005);
-            leader.setYear2007(year2007);
-            leader.setYear2009(year2009);
-            leader.setYear2011(year2011);
-            leader.setYear2013(year2013);
-            leader.setYear2015(year2015);
-            leader.setYear2017(year2017);
-            leader.setType(type);
+            leader.setCount(count);
+            leader.setYear(year);
             return leader;
-
         }
     }
 
