@@ -86,8 +86,6 @@ public class AppDao {
             String gender = resultSet.getString("gender");
             Integer appointmentAge = resultSet.getInt("appointmentAge");
             Integer isAlive = resultSet.getInt("isAlive");
-            Integer income = resultSet.getInt("income");
-            String religion = resultSet.getString("religion");
             String previousOccupation = resultSet.getString("previousOccupation");
             String photoUrl = resultSet.getString("photoUrl");
 
@@ -103,8 +101,6 @@ public class AppDao {
             mayor.setGender(gender);
             mayor.setAppointmentAge(appointmentAge);
             mayor.setIsAlive(isAlive);
-            mayor.setIncome(income);
-            mayor.setReligion(religion);
             mayor.setPreviousOccupation(previousOccupation);
             mayor.setPhotoUrl(photoUrl);
 
@@ -126,8 +122,6 @@ public class AppDao {
             String gender = resultSet.getString("gender");
             Integer appointmentAge = resultSet.getInt("appointmentAge");
             Integer isAlive = resultSet.getInt("isAlive");
-            Integer income = resultSet.getInt("income");
-            String religion = resultSet.getString("religion");
             String previousOccupation = resultSet.getString("previousOccupation");
             String photoUrl = resultSet.getString("photoUrl");
 
@@ -142,8 +136,7 @@ public class AppDao {
             governor.setGender(gender);
             governor.setAppointmentAge(appointmentAge);
             governor.setIsAlive(isAlive);
-            governor.setIncome(income);
-            governor.setReligion(religion);
+
             governor.setPreviousOccupation(previousOccupation);
             governor.setPhotoUrl(photoUrl);
 

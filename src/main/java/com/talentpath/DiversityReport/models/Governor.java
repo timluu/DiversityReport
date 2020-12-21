@@ -11,8 +11,7 @@ public class Governor {
     Integer birthYear;
     Integer appointmentAge;
     Integer isAlive;
-    Integer income;
-    String religion;
+
     String previousOccupation;
     String photoUrl;
 
@@ -96,21 +95,7 @@ public class Governor {
         this.isAlive = isAlive;
     }
 
-    public Integer getIncome() {
-        return income;
-    }
 
-    public void setIncome(Integer income) {
-        this.income = income;
-    }
-
-    public String getReligion() {
-        return religion;
-    }
-
-    public void setReligion(String religion) {
-        this.religion = religion;
-    }
 
     public String getPreviousOccupation() {
         return previousOccupation;

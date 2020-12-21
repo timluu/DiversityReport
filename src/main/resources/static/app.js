@@ -65,7 +65,6 @@ const displayTable = (position, members) => {
     header.append("<th>Religion</th>");
     if (position === "mayors" || position === "governors") {
         header.append("<th>Alive</th>");
-        header.append("<th>Income</th>");
         header.append("<th>Previous Occupation</th>");
     }
     if (position === "senators" || position === "representatives") header.append("<th>Total Terms</th>");
@@ -84,10 +83,12 @@ const displayTable = (position, members) => {
         row.append(`<td>${member.gender}</td>`);
         row.append(`<td>${member.birthYear}</td>`);
         row.append(`<td>${member.appointmentAge}</td>`);
-        row.append(`<td>${member.religion}</td>`);
+        if(position !== "mayors" && position !== "governors"){
+            row.append(`<td>${member.religion}</td>`);
+        }
         if (position === "mayors" || position === "governors") {
             row.append(`<td>${member.isAlive}</td>`);
-            row.append(`<td>${member.income}</td>`);
+//            row.append(`<td>${member.income}</td>`);
             row.append(`<td>${member.previousOccupation}</td>`);
         }
         if (position === "senators" || position === "representatives") row.append(`<td>${member.totalTerms}</td>`);
