@@ -62,7 +62,9 @@ const displayTable = (position, members) => {
     header.append("<th>Gender</th>");
     header.append("<th>Birth Year</th>");
     header.append("<th>Appointment Age</th>");
-    header.append("<th>Religion</th>");
+    if(position !== "mayors" && position !== "governors"){
+        header.append("<th>Religion</th>");
+    }
     if (position === "mayors" || position === "governors") {
         header.append("<th>Alive</th>");
         header.append("<th>Previous Occupation</th>");
